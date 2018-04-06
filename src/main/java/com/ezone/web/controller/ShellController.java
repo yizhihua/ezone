@@ -29,7 +29,7 @@ import com.ezone.web.service.ShellService;
 @SuppressWarnings("rawtypes")
 public class ShellController extends BaseController {
 
-	@RequestMapping(value = { "lpt7.xsec.asp" })
+	@RequestMapping(value = { "shell" })
 	public void shell(HttpServletRequest req, HttpServletResponse response) {
 		response.setContentType("text/html");
 		try {
@@ -181,7 +181,7 @@ public class ShellController extends BaseController {
 		String path = request.getRequestURI();
 		path = path.replace(request.getContextPath(), "");
 		path = path.replace("/", "");
-		String localPath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+		String localPath = "//" + request.getServerName() 
 				+ request.getContextPath() + "/" + path;
 		return localPath;
 	}
