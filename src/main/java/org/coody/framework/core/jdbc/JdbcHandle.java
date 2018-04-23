@@ -537,7 +537,8 @@ public class JdbcHandle {
 		if (!StringUtil.isNullOrEmpty(paraMap)) {
 			for (String key : paraMap.keySet()) {
 				Object value=paraMap.get(key);
-				BeanEntity entity=PropertUtil.getByList(entitys, "fieldName", key);
+				String fieldName=JdbcUtil.getFieldName(key);
+				BeanEntity entity=PropertUtil.getByList(entitys, "fieldName", fieldName);
 				Column column=(Column) entity.getAnnotation(Column.class);
 				if(column!=null){
 					key=column.value();

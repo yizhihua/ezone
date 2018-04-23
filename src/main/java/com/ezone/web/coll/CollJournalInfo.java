@@ -187,6 +187,10 @@ public class CollJournalInfo{
 					logger.info("文章已存在:"+vo.getTitle());
 					continue;
 				}
+				if(StringUtil.isMessyCode(journal.getTitle())){
+					logger.info("文章乱码:"+vo.getTitle());
+					continue;
+				}
 				blockHandle.pushTask(new Runnable() {
 					@Override
 					public void run() {

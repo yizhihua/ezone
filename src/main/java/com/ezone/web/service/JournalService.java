@@ -151,6 +151,11 @@ public class JournalService {
 		return jdbcHandle.findBeanFirst(JournalInfo.class, "title", title);
 	}
 	
+	
+	public Long deleteJournal(Integer id){
+		String sql="delete from journal_info where id=? limit 1";
+		return jdbcHandle.doUpdate(sql,id);
+	}
 	public List<JournalInfo> getJournalList(Integer lastId){
 		String sql="select id,typeId,title,time from journal_info where id>? order by id limit 400 ";
 		return jdbcHandle.queryAuto(JournalInfo.class, sql, lastId);

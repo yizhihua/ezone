@@ -108,6 +108,6 @@ public class LoginController extends BaseController{
 		RequestUtil.setCode(request, verCode);
 		ServletOutputStream out = response.getOutputStream();
 		response.setContentType("image/gif");
-		ImageIO.write(VerificationCodeUtil.outCode(120, 42, 4, 24, verCode), "png", out);
+		ImageIO.write(VerificationCodeUtil.outCode(116, 35, 4, 24, verCode), "png", out);
 	}
 }
