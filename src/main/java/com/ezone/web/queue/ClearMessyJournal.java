@@ -16,7 +16,7 @@ public class ClearMessyJournal {
 		JournalService journalService = SpringContextHelper.getBean(JournalService.class);
 		Integer lastId = 0;
 		while (lastId > -1) {
-			List<JournalInfo> journals = journalService.getJournalList(0);
+			List<JournalInfo> journals = journalService.getJournalList(lastId);
 			if (journals == null || journals.size() == 0) {
 				break;
 			}
