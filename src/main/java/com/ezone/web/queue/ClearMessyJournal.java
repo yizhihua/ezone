@@ -21,7 +21,28 @@ public class ClearMessyJournal {
 				break;
 			}
 			for (JournalInfo journal : journals) {
-				if (StringUtil.isMessyCode(journal.getTitle())) {
+				if (StringUtil.isMessyCode(journal.getTitle())
+						||journal.getTitle().contains("锛")
+						||journal.getTitle().contains("堝")
+						||journal.getTitle().contains("叚")
+						||journal.getTitle().contains("夋")
+						||journal.getTitle().contains("暣")
+						||journal.getTitle().contains("鍚")
+						||journal.getTitle().contains("浜")
+						||journal.getTitle().contains("戞")
+						||journal.getTitle().contains("湇")
+						||journal.getTitle().contains("鍔")
+						||journal.getTitle().contains("灦")
+						||journal.getTitle().contains("鏋")
+						||journal.getTitle().contains("浼")
+						||journal.getTitle().contains("佷")
+						||journal.getTitle().contains("笟")
+						||journal.getTitle().contains("浜")
+						||journal.getTitle().contains("戞")
+						||journal.getTitle().contains("灦")
+						||journal.getTitle().contains("鏋")
+						
+						) {
 					logger.error("删除文章：" + lastId);
 					journalService.deleteJournal(journal.getId());
 				}
