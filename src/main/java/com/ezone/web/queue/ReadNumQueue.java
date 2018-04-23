@@ -13,6 +13,8 @@ import com.ezone.web.service.JournalService;
 @Component
 public class ReadNumQueue {
 	
+	
+	
 	private static BaseLogger logger=BaseLogger.getLogger(ReadNumQueue.class);
 	public static final ConcurrentLinkedQueue<Integer> readNumQueue=new ConcurrentLinkedQueue<Integer>();
 	
