@@ -124,9 +124,15 @@
 				alert(json.msg);
 				if (json.code == 0) {
 					if(status==2){
-						var href=location.href;
-						href=href.replace('${defSuffix}',suffix);
-						location.href=href;
+						var href=location.pathname;
+						var strs=new Array();
+						strs=href.split("."); //字符分割
+						var uri="";
+						for(var i=0;i<strs.length-1;i++){
+							uri+=strs[i]+".";
+						}
+						uri+=suffix;
+						location.href=uri;
 						return;
 					}
 					location.reload(true);
