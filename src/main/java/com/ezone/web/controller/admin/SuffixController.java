@@ -1,5 +1,7 @@
 package com.ezone.web.controller.admin;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.coody.framework.context.annotation.Power;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ezone.web.domain.SuffixInfo;
+import com.ezone.web.domain.SuffixStatic;
 import com.ezone.web.service.SuffixService;
 
 @RequestMapping("/admin/suffix")
@@ -81,6 +84,10 @@ public class SuffixController extends BaseController{
 		SuffixInfo suffixInfoInDb=suffixService.loadSuffix(suffixInfo.getSuffix());
 		if(suffixInfoInDb!=null){
 			return new MsgEntity(-1,"后缀已存在");
+		}
+		List<String> staticSuffixs=suffixService.loadStaSuffix();
+		if(staticSuffixs.contains(suffixInfo.getSuffix())){
+			return new MsgEntity(-1,"不能添加该后缀");
 		}
 		Long code=suffixService.addSuffix(suffixInfo);
 		if(code<1){
