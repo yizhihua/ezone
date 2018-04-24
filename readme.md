@@ -3,6 +3,8 @@
 
 前言：希望所有阅读过本项目源代码的朋友，记得给个Star。
 
+博客模板来自于“杨青”，传送门：http://www.yangqq.com/download/div/2014-04-17/661.html
+
 1、博主博客：http://54sb.org
 
 2、demo站：http://test.coody.org/
