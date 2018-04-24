@@ -9,7 +9,7 @@
 
 2、demo站：http://test.coody.org/
 
-3、demo站后台：http://test.coody.org/admin/login.asp 用户名：coody 密码：123456 （不用在意后缀）
+3、demo站后台：http://test.coody.org/admin 用户名：coody 密码：123456 （不用在意后缀）
 
 4、前端功能包括：文章列表、文章类别、站长/博主信息、最新/最热文章、分页、友情链接、文章详情等。
 
