@@ -237,6 +237,7 @@ INSERT INTO `sys_menus` VALUES ('28', '4', '运行状态', 'admin/simple/index',
 INSERT INTO `sys_menus` VALUES ('29', '4', '资源管理', 'admin/simple/resources', '1', '1', 'resources', '对项目文件进行管理');
 INSERT INTO `sys_menus` VALUES ('30', '4', '监听管理', 'admin/simple/monitorList', '1', '2', 'monitorSetting', '对项目方法进行监听');
 INSERT INTO `sys_menus` VALUES ('32', '4', '缓存管理', 'admin/simple/cacheManage', '1', '4', 'cacheSetting', '对系统缓存进行清理');
+INSERT INTO `sys_menus` VALUES ('33', '4', '后缀设置', 'admin/suffix/suffixManage', '1', '4', 'suffixManage', '对网站后缀进行管理');
 
 -- ----------------------------
 -- Table structure for tools_info
@@ -555,7 +556,7 @@ CREATE TABLE `user_role` (
 -- ----------------------------
 -- Records of user_role
 -- ----------------------------
-INSERT INTO `user_role` VALUES ('1', '超级管理员', '4,28,29,30,32');
+INSERT INTO `user_role` VALUES ('1', '超级管理员', '4,28,29,30,32,33');
 
 -- ----------------------------
 -- Records of journal_info

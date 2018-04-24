@@ -42,6 +42,10 @@ public abstract class BaseController{
 
 		}
 	}
+	
+	protected void removeSessionPara(String paraName) {
+		request.getSession().removeAttribute(paraName);
+	}
 	protected String loadBasePath(HttpServletRequest request) {
 		return RequestUtil.loadBasePath(request);
 	}
