@@ -9,8 +9,6 @@ import javax.imageio.ImageIO;
 
 import org.coody.framework.context.entity.HttpEntity;
 
-import com.ezone.web.util.BaiduHttpUtil;
-
 /**
  * 
  * 2014-09-16
@@ -39,7 +37,7 @@ public class UploadUtil {
 
 
 	public static String doDown(String url) throws Exception {
-		BaiduHttpUtil http=new BaiduHttpUtil();
+		HttpHandle http=new HttpHandle();
 		HttpEntity entity = http.Get(url);
 		if (entity == null || entity.getBye() == null) {
 			throw new Exception("图片下载失败");

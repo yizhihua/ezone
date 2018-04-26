@@ -19,6 +19,7 @@ import org.coody.framework.context.entity.HttpEntity;
 import org.coody.framework.context.entity.Pager;
 import org.coody.framework.core.thread.ThreadBlockHandle;
 import org.coody.framework.util.GZIPUtils;
+import org.coody.framework.util.HttpHandle;
 import org.coody.framework.util.PropertUtil;
 import org.coody.framework.util.StringUtil;
 import org.coody.framework.util.UploadUtil;
@@ -30,7 +31,6 @@ import com.ezone.web.domain.TypeInfo;
 import com.ezone.web.service.CollService;
 import com.ezone.web.service.JournalService;
 import com.ezone.web.service.TypeService;
-import com.ezone.web.util.BaiduHttpUtil;
 
 @Component
 public class CollJournalInfo{
@@ -39,7 +39,7 @@ public class CollJournalInfo{
 	
 	private final BaseLogger logger = BaseLogger.getLoggerPro(this.getClass());
 	private final static String articlePattern = "<a href=\"{url}\\d{1,15}.html\" target=\"_blank\">.*?</a>";
-	public static BaiduHttpUtil httpUtil=new BaiduHttpUtil();
+	public static HttpHandle httpUtil=new HttpHandle();
 	private final String contextPattern = "<div class=\"c_txt\">.*?</div>(?=(<div class=))";
 	private final String imgPattern = "<img.*?src=\"([^\"]*)\".*?>";
 	private final String baseUrl = "http://www.myexception.cn";
@@ -187,7 +187,7 @@ public class CollJournalInfo{
 					logger.info("文章已存在:"+vo.getTitle());
 					continue;
 				}
-				if(StringUtil.isMessyCode(journal.getTitle())){
+				if(StringUtil.isMessyCode(vo.getTitle())){
 					logger.info("文章乱码:"+vo.getTitle());
 					continue;
 				}
@@ -203,6 +203,7 @@ public class CollJournalInfo{
 				});
 				
 			} catch (Exception e) {
+				e.printStackTrace();
 			}
 		}
 		blockHandle.execute();
