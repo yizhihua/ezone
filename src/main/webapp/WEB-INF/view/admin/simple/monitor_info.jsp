@@ -315,9 +315,10 @@ hr, ol, p, pre, ul {
 	margin-bottom: 1px;
 }
 
-body, pre {
+.tpl-content-wrapper {
 	line-height: 1.0;
 }
+
 
 .padding {
 	padding: .6rem 1.25rem;

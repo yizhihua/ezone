@@ -379,7 +379,7 @@ hr, ol, p, pre, ul {
 	margin-bottom: 1px;
 }
 
-body, pre {
+.tpl-content-wrapper {
 	line-height: 1.0;
 }
 
