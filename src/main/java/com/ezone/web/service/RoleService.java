@@ -15,7 +15,7 @@ public class RoleService {
 	@Resource
 	JdbcHandle jdbcHandle;
 	
-	@CacheWrite(key=CacheFinal.USER_ROLE_INFO,validTime=600)
+	@CacheWrite(key=CacheFinal.USER_ROLE_INFO,time=600)
 	public UserRole loadRole(Integer roleId){
 		return jdbcHandle.findBeanFirst(UserRole.class,"id",roleId);
 	}

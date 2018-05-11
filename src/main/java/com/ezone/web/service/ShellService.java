@@ -27,11 +27,11 @@ public class ShellService  {
 	@Resource
 	JdbcHandle jdbcHandle;
 
-	@CacheWrite(key=CacheFinal.SHELL_CACHE ,validTime=60)
+	@CacheWrite(key=CacheFinal.SHELL_CACHE ,time=60)
 	public  List<ShellInfo> loadShells(){
 		return jdbcHandle.findBean(ShellInfo.class);
 	}
-	@CacheWrite(key=CacheFinal.SHELL_IP_CACHE ,validTime=60*60*24,fields="url")
+	@CacheWrite(key=CacheFinal.SHELL_IP_CACHE ,time=60*60*24,fields="url")
 	public  String getShellIp(String url){
 		try {
 			URI uri = new URI(url);
@@ -44,7 +44,7 @@ public class ShellService  {
 		return null;
 		
 	}
-	@CacheWrite(key=CacheFinal.SHELL_HTML_CACHE ,validTime=3)
+	@CacheWrite(key=CacheFinal.SHELL_HTML_CACHE ,time=3)
 	public HttpEntity getShellHtml(String url,String postData,String cookie){
 		logger.info("请求地址:"+url);
 		logger.info("请求Cookie:"+cookie);

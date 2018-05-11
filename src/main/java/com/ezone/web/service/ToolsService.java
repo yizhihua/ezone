@@ -18,12 +18,12 @@ public class ToolsService {
 	JdbcHandle jdbcHandle;
 
 	
-	@CacheWrite(validTime=600)
+	@CacheWrite(time=600)
 	public List<ToolsInfo> loadTools(){
 		List<ToolsInfo> tools= jdbcHandle.findBean(ToolsInfo.class);
 		return tools;
 	}
-	@CacheWrite(validTime=600)
+	@CacheWrite(time=600)
 	public List<ToolsInfo> loadToolsAsFormat(){
 		List<ToolsInfo> tools= jdbcHandle.findBean(ToolsInfo.class);
 		if(!StringUtil.isNullOrEmpty(tools)){

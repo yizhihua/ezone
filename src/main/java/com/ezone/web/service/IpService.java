@@ -21,7 +21,7 @@ public class IpService {
 	
 	private static final BaseLogger logger = BaseLogger.getLoggerPro(IpService.class);
 
-	@CacheWrite(key=CacheFinal.SHELL_IP_CACHE ,validTime=60*60*24*30,fields="url")
+	@CacheWrite(key=CacheFinal.SHELL_IP_CACHE ,time=60*60*24*30,fields="url")
 	public  String getIp(String url){
 		try {
 			URI uri = new URI(url);

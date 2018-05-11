@@ -14,7 +14,7 @@ public class SiteMapService {
 	@Resource
 	JdbcHandle jdbcHandle;
 	
-	@CacheWrite(validTime=60)
+	@CacheWrite(time=60)
 	public SiteMap loadSiteMap(){
 		return jdbcHandle.findBeanFirst(SiteMap.class);
 	}

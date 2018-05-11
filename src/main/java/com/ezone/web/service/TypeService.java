@@ -23,7 +23,7 @@ public class TypeService{
 	JournalService journalService;
 	
 	
-	@CacheWrite(validTime=600)
+	@CacheWrite(time=600)
 	public List<TypeSchema> loadTypes(){
 		List<TypeInfo> types=jdbcHandle.findBean(TypeInfo.class);
 		if(StringUtil.isNullOrEmpty(types)){

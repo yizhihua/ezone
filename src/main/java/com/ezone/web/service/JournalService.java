@@ -27,7 +27,7 @@ public class JournalService {
 	@Resource
 	TypeService typeService;
 	
-	@CacheWrite(validTime=7200)
+	@CacheWrite(time=7200)
 	public Integer getCount(Integer typeId){
 		String sql="select count(*) from journal_info where typeId=?";
 		return jdbcHandle.getCount(sql, typeId);
@@ -58,7 +58,7 @@ public class JournalService {
 		return code;
 	}
 	
-	@CacheWrite(validTime=360)
+	@CacheWrite(time=360)
 	public Pager loadJournalPager(Integer currPager,Integer typeId){
 		Where where=new Where();
 		if(!StringUtil.isNullOrEmpty(typeId)){
@@ -108,7 +108,7 @@ public class JournalService {
 		
 	}
 	
-	@CacheWrite(validTime=3600)
+	@CacheWrite(time=3600)
 	public List<JournalSchema> loadNews(){
 		Pager pager=new Pager(46,1);
 		List<JournalInfo> journals=jdbcHandle.findBean(JournalInfo.class, new Where(),pager,"id", true);
@@ -122,7 +122,7 @@ public class JournalService {
 		return schemas;
 	}
 	
-	@CacheWrite(validTime=3600)
+	@CacheWrite(time=3600)
 	public List<JournalSchema> loadHots(){
 		Pager pager=new Pager(46,1);
 		List<JournalInfo> journals=jdbcHandle.findBean(JournalInfo.class, new Where(),pager,"views", true);
@@ -136,7 +136,7 @@ public class JournalService {
 		return schemas;
 	}
 	
-	@CacheWrite(validTime=60)
+	@CacheWrite(time=60)
 	public JournalSchema loadJournalInfo(Integer id){
 		JournalInfo journalInfo= jdbcHandle.findBeanFirst(JournalInfo.class, "id", id);
 		if(StringUtil.isNullOrEmpty(journalInfo)){

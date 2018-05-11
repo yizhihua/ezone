@@ -27,18 +27,18 @@ public class UserService {
 	@Resource
 	JdbcHandle jdbcHandle;
 
-	@CacheWrite(key = CacheFinal.USER_INFO, fields = "account", validTime = 60)
+	@CacheWrite(key = CacheFinal.USER_INFO, fields = "account", time = 60)
 	public UserInfo loadUserInfo(String account) {
 		String sql = "select * from user_info where userName=? limit 1";
 		return jdbcHandle.queryFirstAuto(UserInfo.class, sql, account);
 	}
 
-	@CacheWrite(key = CacheFinal.USER_INFO, fields = "id", validTime = 72000)
+	@CacheWrite(key = CacheFinal.USER_INFO, fields = "id", time = 72000)
 	public UserInfo loadUserInfo(Integer id) {
 		return jdbcHandle.findBeanFirst(UserInfo.class, "id", id);
 	}
 	
-	@CacheWrite(key = CacheFinal.LOGIN_NEED_VERCODE, fields = "ipAddress", validTime = 3660)
+	@CacheWrite(key = CacheFinal.LOGIN_NEED_VERCODE, fields = "ipAddress", time = 3660)
 	public Boolean needVerCode(String ipAddress){
 		Where where=new Where()
 				.set("ip", ipAddress).set("createTime", ">",DateUtils.changeDay(new Date(), -1));
