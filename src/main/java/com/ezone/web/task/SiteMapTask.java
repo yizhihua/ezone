@@ -46,7 +46,7 @@ public class SiteMapTask {
 			sbXml.append("<urlset>");
 			for (JournalInfo tmp : list) {
 				if (tmp != null && tmp.getId() > 0) {
-					String url = MessageFormat.format("{0}/article_{1}.html", siteMap.getDomain(),
+					String url = MessageFormat.format("http://{0}/article_{1}.html", siteMap.getDomain(),
 							String.valueOf(tmp.getId()));
 					sbXml.append("\r\n").append("<url>");
 					sbXml.append("\r\n").append("<loc>").append(url).append("</loc>");
