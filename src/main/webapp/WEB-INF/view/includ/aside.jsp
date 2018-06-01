@@ -43,6 +43,7 @@
 			<li><a href="http://coody.org">imxss</a></li>
 			<li><a href="http://www.itxueke.com">IT学客网</a></li>
 			<li><a href="http://blog.techauch.com">code life博客</a></li>
+			<li><a href="http://www.52ddos.cc/">XH云服务器</a></li>
 		</ul>
 	</div>
 	<div class="copyright">
