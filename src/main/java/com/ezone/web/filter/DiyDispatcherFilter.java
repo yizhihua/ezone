@@ -50,7 +50,7 @@ public class DiyDispatcherFilter extends DispatcherServlet implements Filter {
 			res.setHeader("X-Powered-By", XPBy);
 			String server = serverList.get(StringUtil.getRanDom(0, serverList.size() - 1));
 			res.setHeader("Server", server);
-			res.setHeader("X-frame-options", "DENY");
+			res.setHeader("X-Frame-Options", "deny");
 		} catch (Exception e) {
 		}
 	}
